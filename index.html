@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Meta tags and basic setup. More complete head content will be loaded from templates/header.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendidikan Ilmu Komputer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 font-sans antialiased text-gray-800">
+
+    <!-- Auth Container (Login/Register Panel) -->
+    <div id="auth-container">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md mx-4">
+            <!-- Login Panel -->
+            <div id="login-panel">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-6 text-center">Login ke Pendidikan Ilmu Komputer</h2>
+                <div class="mb-4" id="login-error-message" style="display: none;">
+                    <p class="text-center text-red-600 text-sm bg-red-100 p-2 rounded-md"><i class="fas fa-exclamation-circle mr-1"></i> Username atau password salah.</p>
+                </div>
+                <form id="login-form">
+                    <div class="mb-4">
+                        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                        <input type="text" id="username" name="username" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="password" name="password" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+                        Login
+                    </button>
+                </form>
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-600">Belum punya akun? <a href="#" id="show-register-panel" class="font-medium text-indigo-600 hover:text-indigo-500">Daftar sekarang</a></p>
+                </div>
+            </div>
+
+            <!-- Register Panel (Hidden by default) -->
+            <div id="register-panel" class="hidden">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-6 text-center">Daftar Akun Baru</h2>
+                <div class="mb-4" id="register-success-message" style="display: none;">
+                    <p class="text-center text-green-600 text-sm bg-green-100 p-2 rounded-md"><i class="fas fa-check-circle mr-1"></i> Akun berhasil dibuat! Silakan login.</p>
+                </div>
+                <form id="register-form">
+                    <div class="mb-4">
+                        <label for="reg-username" class="block text-sm font-medium text-gray-700">Username</label>
+                        <input type="text" id="reg-username" name="reg-username" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="reg-email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="reg-email" name="reg-email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="reg-password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="reg-password" name="reg-password" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition duration-150 ease-in-out">
+                        Daftar
+                    </button>
+                </form>
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-600">Sudah punya akun? <a href="#" id="show-login-panel" class="font-medium text-sky-600 hover:text-sky-500">Login sekarang</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (Will be populated by JS after successful login) -->
+    <div id="main-content" style="display: none;">
+        <!-- Navbar, Sections, Footer will be loaded here dynamically by JS -->
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
